@@ -1,0 +1,19 @@
+{
+    "name": "royalmar/laravel-line-notify",
+    "description": "LINE Notify for laravel",
+    "type": "library",
+    "authors": [
+        {
+            "name": "royalmar",
+            "email": "royal-mar@hotmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Royalmar\\LineNotify\\": "src/"
+        }
+    }
+}
