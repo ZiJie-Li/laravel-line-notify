@@ -1,17 +1,18 @@
 # Laravel Line Notify
 在Laravel實作Line Notify (Notification) 套件
 
-##How to install
+## How to install
 ```
 composer require royalmar/laravel-line-notify
 ```
 
-##Laravel Setup
+## Laravel Setup
+
 Add the service provider to config/app.php:
 ```
 'providers' => [
     ...
-    Royalmar\HtmlDomParser\HtmlDomParserServiceProvider::class,
+    Royalmar\LineNotify\Providers\LineNotifyServiceProvider::class,
     ...
 ```
 
@@ -24,20 +25,20 @@ Add alias to config/app.php:
 ```
 
 
-##Use custom config
+## Use custom config
 ```bash
 php artisan vendor:publish --tag="line_notify_install"
 ```
 
 
-##Usage
+## Usage
 
-#Send text message
+### Send text message
 ```php
 LineNotify::sendMessage('{accessToken}', 'test massage');
 ```
 
-#Send text message and image
+### Send text message and image
 ```php
 LineNotify::sendMessageAndImage('{accessToken}', 'test massage', [
             'imageThumbnail' => 'https://asnanak.net/site/wp-content/uploads/2012/10/source_27_waves_dark_green-240x240.jpg',
@@ -45,7 +46,7 @@ LineNotify::sendMessageAndImage('{accessToken}', 'test massage', [
         ]);
 ```
 
-#send text message and sticker
+### send text message and sticker
 ```php
 LineNotify::sendMessageAndSticker('{accessToken}', 'test massage', [
             'stickerPackageId' => 1,
