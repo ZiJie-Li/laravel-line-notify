@@ -85,9 +85,9 @@ class LineNotifyService implements LineNotifySender
     private function post($accessToken, $data)
     {
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, config('LineNotify.api.url'));
+        curl_setopt($ch, CURLOPT_URL, config('LineNotify.api.url', 'https://notify-api.line.me/api/notify'));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_TIMEOUT, config('LineNotify.api_timeout'));
+        curl_setopt($ch, CURLOPT_TIMEOUT, config('LineNotify.api_timeout', 30));
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
                 'Authorization: Bearer ' . $accessToken
